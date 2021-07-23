@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>React! React! React!</title>
+   <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+   <script  script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+   
+   <div id="container"></div>
+   <script type="text/babel">
+   class HelloWorld extends React.Component { render() {
+      return <p>Hello, {this.props.greetTarget}!</p>
+
+     }
+   }
+   class Buttonify extends React.Component { 
+      render() {
+       return(
+         <div>
+            <button type={this.props.behavior}>{this.props. children}</button>
+         </div> 
+         );
+      } 
+   }
+   var destination = document.querySelector("#container");
+   ReactDOM.render(
+         <div>
+            <HelloWorld greetTarget="batman"/>
+            <HelloWorld greetTarget="khalel" />
+            <HelloWorld greetTarget="batyr" />
+            <Buttonify behavior="submit">Send</Buttonify>
+         </div>,
+         destination
+   );
+   </script>
+
+</body>
+</html>
